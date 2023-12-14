@@ -24,13 +24,13 @@
 
         const inputs = document.querySelectorAll('input');
         fillInput(inputs[1], wallets[i]);
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 10));
 
         success = false
         while (!success) {
-          const divs = document.querySelectorAll('div');
+          let divs = document.querySelectorAll('div');
           divs.forEach(div => {
-            if (div.className.includes('SearchAddress_address') && div.textContent.includes(wallets[i])) {
+            if (div.className.includes('SearchAddress_address')) {
               console.log(div)
               div.click()
               success = true
