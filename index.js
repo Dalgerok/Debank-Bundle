@@ -24,7 +24,7 @@
 
         const inputs = document.querySelectorAll('input');
         fillInput(inputs[1], wallets[i]);
-        await new Promise((resolve) => setTimeout(resolve, 10));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         success = false
         while (!success) {
@@ -38,6 +38,7 @@
           });
           await new Promise((resolve) => setTimeout(resolve, 500));
         }
+        await new Promise((resolve) => setTimeout(resolve, 3000));
       }
     
       console.log('Завершено');
